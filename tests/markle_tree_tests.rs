@@ -1,8 +1,8 @@
-use user_balance_merkle_tree::merkle_tree::MerkleTree;
+use user_balance_merkle_tree::MerkleTree;
 
 #[test]
 fn test_add_balance() {
-    let mut tree: MerkleTree = MerkleTree::new();
+    let mut tree = MerkleTree::new();
     tree.add_balance("user1".to_string(), 100);
     assert_eq!(tree.get_balance("user1"), Some(100));
 }
@@ -28,13 +28,13 @@ fn test_multiple_balances() {
 
 #[test]
 fn test_nonexistent_balance() {
-    let tree: MerkleTree = MerkleTree::new();
+    let tree = MerkleTree::new();
     assert_eq!(tree.get_balance("nonexistent"), None);
 }
 
 #[test]
 fn test_tree_size() {
-    let mut tree: MerkleTree = MerkleTree::new();
+    let mut tree = MerkleTree::new();
     tree.add_balance("user1".to_string(), 100);
     tree.add_balance("user2".to_string(), 200);
     assert!(tree.size_in_bytes() > 0);
