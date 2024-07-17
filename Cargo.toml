@@ -1,6 +1,6 @@
 [package]
 name = "user-balance-merkle-tree"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "A simple Merkle tree implementation in Rust for user/balance storage."
 license = "MIT"
